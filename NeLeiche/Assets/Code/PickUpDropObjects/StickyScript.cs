@@ -23,18 +23,22 @@ public class StickyScript : MonoBehaviour
 
         pickUpScript = player.GetComponent<PickUpScript>();
 
-        if (pickUpScript.heldObj == null)
+        if (pickUpScript.heldObj == this)
         {
-            stickyActive = true;
+            foreach (var comp in gameObject.GetComponents<FixedJoint>())
+            {
+                    Destroy(comp);
+            }
+            //Destroy(gameObject.GetComponent("FixedJoint"));
+            stickyActive = false;
         }
         else
         {
-            stickyActive = false;
+            stickyActive = true;
         }
 
         if (stickyActive == false)
         {
-            Destroy(gameObject.GetComponent("FixedJoint"));
         }
     }
 
@@ -57,6 +61,7 @@ public class StickyScript : MonoBehaviour
         }
         else
         {
+            Destroy(gameObject.GetComponent("FixedJoint"));
             //EnableRagdoll();
         }
     }
