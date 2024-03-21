@@ -14,21 +14,17 @@ public class StickyScript : MonoBehaviour
     {
         player = GameObject.Find("MainCamera");
         rBody = GetComponent<Rigidbody>();
-        pickUpScript = player.GetComponent<PickUpScript>();
+        //pickUpScript = player.GetComponent<PickUpScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         pickUpScript = player.GetComponent<PickUpScript>();
+
 
         if (pickUpScript.heldObj == this)
         {
-            foreach (var comp in gameObject.GetComponents<FixedJoint>())
-            {
-                    Destroy(comp);
-            }
             //Destroy(gameObject.GetComponent("FixedJoint"));
             stickyActive = false;
         }
@@ -39,21 +35,35 @@ public class StickyScript : MonoBehaviour
 
         if (stickyActive == false)
         {
+            FixedJoint[] hingeJoints;
+
+            hingeJoints = gameObject.GetComponents<FixedJoint>();
+
+            foreach (FixedJoint joint in hingeJoints)
+            {
+                Destroy(joint);
+            }
+
+            foreach (var comp in gameObject.GetComponents<FixedJoint>())
+            {
+                    Destroy(comp);
+            }
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         
-        if (stickyActive == true)
+        if (stickyActive == true && collision.gameObject.tag != "Player")
         {
             foreach (ContactPoint contact in collision.contacts)
             {
-
                 FixedJoint fixedJoint = gameObject.AddComponent<FixedJoint>();
                 fixedJoint.anchor = contact.point;
                 fixedJoint.connectedBody = collision.rigidbody;
+                Debug.Log(collision.gameObject.name);
 
+                stickyActive = false;
 
                 //DisableRagdoll();
             }
@@ -68,7 +78,20 @@ public class StickyScript : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        Destroy(gameObject.GetComponent("FixedJoint"));
+        //Destroy(gameObject.GetComponent("FixedJoint"));
+        FixedJoint[] hingeJoints;
+
+        hingeJoints = gameObject.GetComponents<FixedJoint>();
+
+        foreach (FixedJoint joint in hingeJoints)
+        {
+            Destroy(joint);
+        }
+
+        foreach (var comp in gameObject.GetComponents<FixedJoint>())
+        {
+            Destroy(comp);
+        }
     }
 
     void EnableRagdoll()

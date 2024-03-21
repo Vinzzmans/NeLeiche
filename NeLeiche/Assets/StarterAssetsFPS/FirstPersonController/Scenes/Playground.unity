@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 232526875}
   - component: {fileID: 232526874}
   - component: {fileID: 232526879}
+  - component: {fileID: 232526880}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: canPickUp
@@ -276,7 +277,21 @@ MonoBehaviour:
   hideOutLayer:
     serializedVersion: 2
     m_Bits: 128
-  rb: {fileID: 0}
+--- !u!114 &232526880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232526872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58acfa28983813d42a13b4c58f8c4588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpScript: {fileID: 0}
+  player: {fileID: 0}
+  stickyActive: 0
 --- !u!1 &271936642
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +306,7 @@ GameObject:
   - component: {fileID: 271936645}
   - component: {fileID: 271936644}
   - component: {fileID: 271936649}
+  - component: {fileID: 271936650}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: canPickUp
@@ -427,7 +443,21 @@ MonoBehaviour:
   hideOutLayer:
     serializedVersion: 2
     m_Bits: 128
-  rb: {fileID: 0}
+--- !u!114 &271936650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271936642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58acfa28983813d42a13b4c58f8c4588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpScript: {fileID: 0}
+  player: {fileID: 0}
+  stickyActive: 0
 --- !u!1 &530668480
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +472,7 @@ GameObject:
   - component: {fileID: 530668483}
   - component: {fileID: 530668482}
   - component: {fileID: 530668487}
+  - component: {fileID: 530668488}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: canPickUp
@@ -578,7 +609,21 @@ MonoBehaviour:
   hideOutLayer:
     serializedVersion: 2
     m_Bits: 128
-  rb: {fileID: 0}
+--- !u!114 &530668488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530668480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58acfa28983813d42a13b4c58f8c4588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpScript: {fileID: 0}
+  player: {fileID: 0}
+  stickyActive: 0
 --- !u!1 &542508511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,6 +1406,7 @@ GameObject:
   - component: {fileID: 1029346033}
   - component: {fileID: 1029346032}
   - component: {fileID: 1029346037}
+  - component: {fileID: 1029346038}
   m_Layer: 0
   m_Name: Cube
   m_TagString: canPickUp
@@ -1497,7 +1543,21 @@ MonoBehaviour:
   hideOutLayer:
     serializedVersion: 2
     m_Bits: 128
-  rb: {fileID: 0}
+--- !u!114 &1029346038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029346030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58acfa28983813d42a13b4c58f8c4588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpScript: {fileID: 0}
+  player: {fileID: 0}
+  stickyActive: 0
 --- !u!1 &1281422066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,6 +2129,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 849884509126693213, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5636641993292158790, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5636641993292158791, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_BackGroundColor.a
